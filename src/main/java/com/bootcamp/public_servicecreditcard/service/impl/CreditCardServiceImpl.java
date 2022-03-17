@@ -3,11 +3,16 @@ package com.bootcamp.public_servicecreditcard.service.impl;
 import com.bootcamp.public_servicecreditcard.model.dao.CreditCard;
 import com.bootcamp.public_servicecreditcard.repository.CreditCardCrudRepository;
 
+import com.bootcamp.public_servicecreditcard.service.CreditCardService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
-public class CreditCardServiceImpl {
+@Service
+public class CreditCardServiceImpl implements CreditCardService {
 
+    @Autowired
 	private CreditCardCrudRepository repository;
 	
 	public Flux<CreditCard> findAll() {
